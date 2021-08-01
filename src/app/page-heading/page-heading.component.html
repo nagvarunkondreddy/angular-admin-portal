@@ -3,15 +3,28 @@
         <h3 class="blue-default-text">{{heading1}}</h3>
     </div>
     <div class="d-grid col-lg-4 offset-lg-4 col-md-4 offset-md-4 d-none d-sm-block">
-        <button class="btn blue-default btn-rounded float-end" *ngIf="addButtonDisplay">
+        <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
+            *ngIf="addButtonDisplay">
             <i class="bi bi-plus"></i>
             {{addButtonText}}
         </button>
     </div>
     <div class="d-grid col-4 d-block d-sm-none">
-        <button class="btn blue-default btn-rounded float-end" *ngIf="addButtonDisplay">
+        <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
+            *ngIf="addButtonDisplay">
             <i class="bi bi-plus"></i>
             New
         </button>
     </div>
 </div>
+
+<app-modal *ngIf="heading1 == 'Works-in-Progress'" [modalTitle]="'Add A New Project'" [inputOneLabel]="'Title'"
+    [inputTwoLabel]="'Gitlab'" [inputThreeLabel]="'Team'" [inputThreeLabelType]="'text'" [inputFourLabel]="'Images'"
+    [inputFiveLabel]="'Description'"></app-modal>
+
+
+<app-modal *ngIf="heading1 == 'Upcoming'" [modalTitle]="'Add A New Event'" [inputOneLabel]="'Title'"
+    [inputTwoLabel]="'Venue'" [inputThreeLabel]="'Date'" [inputThreeLabelType]="'datetime-local'"
+    [inputFourLabel]="'Images'" [inputFiveLabel]="'Description'"></app-modal>
+
+<app-team-modal></app-team-modal>

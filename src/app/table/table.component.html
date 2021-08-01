@@ -1,5 +1,6 @@
-<div>
-  <table class="table table-hover text-center shadow-sm align-middle">
+<div style="overflow-x: auto;">
+  <table class="table table-hover text-center shadow-sm align-middle fixed_header"
+    [ngClass]="imageTable?'team_header':'recruit_header'">
     <thead class="gradient-blue text-light" style="line-height: 2.5rem;">
       <tr>
         <th *ngFor="let heading of tableHeadings">{{heading}}</th>

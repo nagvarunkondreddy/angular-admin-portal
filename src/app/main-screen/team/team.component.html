@@ -1,5 +1,6 @@
 <div class="container">
-    <app-heading [heading1]="'Team'" [addButtonDisplay]="true" [addButtonText]="'Add New Member'">
+    <app-heading [modalType]="'#teamModal'" [heading1]="'Team'" [addButtonDisplay]="true"
+        [addButtonText]="'Add New Member'">
     </app-heading>
     <br>
     <app-table [tableHeadings]="teamTableHeadings" [tableData]="teamTableData" [imageTable]="true"></app-table>

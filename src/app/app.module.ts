@@ -17,6 +17,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { HeadingComponent } from './page-heading/page-heading.component';
 import { TableComponent } from './table/table.component';
+import { ModalComponent } from './modals/modal-1/modal.component';
+import { TeamModalComponent } from './modals/team-modal/team-modal.component';
+import { ArticleModalComponent } from './modals/article-modal/article-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,15 +33,18 @@ import { TableComponent } from './table/table.component';
     RecruitmentComponent,
     CardsComponent,
     HeadingComponent,
-    TableComponent
+    TableComponent,
+    ModalComponent,
+    TeamModalComponent,
+    ArticleModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,36 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-@import "bootstrap-icons/font/bootstrap-icons.css";
-@import "../src/assets/css/defaultStyle.css";
-
-.btn-rounded {
-  border-radius: 2rem;
-}
-
-.blue-default {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-
-a.blue-default:hover,
-button.blue-default:hover {
-  background-color: #1f4b7dde;
-  color: var(--white-color);
-}
-
-.blue-default-text {
-  color: var(--primary-color);
-}
-
-.horizontalScroll::-webkit-scrollbar {
-  width: 0;
-}
-.horizontalScroll::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 20px;
-  border: 4px solid transparent;
-  background-clip: content-box;
-}
-
 input {
   border-radius: 10px;
   opacity: 1;
