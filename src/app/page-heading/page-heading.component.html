@@ -1,19 +1,33 @@
 <div class="row">
-    <div class="col col-lg-4 col-md-4 col-8">
+    <div class="col col-lg-4 col-md-4" [ngClass]="getClassName1()">
         <h3 class="blue-default-text">{{heading1}}</h3>
     </div>
-    <div class="d-grid col-lg-4 offset-lg-4 col-md-4 offset-md-4 d-none d-sm-block">
-        <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
-            *ngIf="addButtonDisplay">
-            <i class="bi bi-plus"></i>
+    <div class="d-grid   offset-md-4 col-md-4  d-none d-sm-block" [ngClass]="getClassName()">
+        <button (click)="checkRoute()" class="btn blue-default btn-rounded float-end" data-bs-toggle="modal"
+            [attr.data-bs-target]="modalType" *ngIf="addButtonDisplay">
+            <i style="padding-right:3px;" [ngClass]="getIcons()"></i>
             {{addButtonText}}
         </button>
     </div>
-    <div class="d-grid col-4 d-block d-sm-none">
+    <div class="d-grid col-lg-2  col-md-4  d-none d-sm-block">
         <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
-            *ngIf="addButtonDisplay">
-            <i class="bi bi-plus"></i>
-            New
+            *ngIf="activeRoute === 'text-editor'">
+            <i style="padding-right:3px;" class="fa fa-trash" aria-hidden="true"></i>
+            Discard
+        </button>
+    </div>
+    <div class="d-grid d-block d-sm-none" [ngClass]="getClassName2()">
+        <button (click)="checkRoute()" class="btn blue-default btn-rounded float-end" data-bs-toggle="modal"
+            [attr.data-bs-target]="modalType" *ngIf="addButtonDisplay">
+            <i [ngClass]="getIcons()"></i>
+            {{mobileViewButtonText}}
+        </button>
+    </div>
+    <div class="d-grid col-3 d-block d-sm-none">
+        <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
+            *ngIf="activeRoute === 'text-editor'">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+
         </button>
     </div>
 </div>

@@ -20,6 +20,7 @@ import { TableComponent } from './table/table.component';
 import { ModalComponent } from './modals/modal-1/modal.component';
 import { TeamModalComponent } from './modals/team-modal/team-modal.component';
 import { ArticleModalComponent } from './modals/article-modal/article-modal.component';
+import { TextEditorComponent } from './main-screen/articles/text-editor/text-editor.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ArticleModalComponent } from './modals/article-modal/article-modal.comp
     ModalComponent,
     TeamModalComponent,
     ArticleModalComponent,
+    TextEditorComponent,
   ],
   imports: [
     BrowserModule,

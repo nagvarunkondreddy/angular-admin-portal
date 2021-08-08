@@ -104,3 +104,11 @@ textarea {
   opacity: 1;
   padding: 4px 12px !important;
 }
+
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem transparent;
+}
+
+.btn {
+  padding: 0.275rem 0.75rem !important;
+}
