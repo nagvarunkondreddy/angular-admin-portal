@@ -2,14 +2,15 @@
     <div class="col col-lg-4 col-md-4" [ngClass]="getClassName1()">
         <h3 class="blue-default-text">{{heading1}}</h3>
     </div>
-    <div class="d-grid   offset-md-4 col-md-4  d-none d-sm-block" [ngClass]="getClassName()">
+    <div class="d-grid   offset-md-4 col-md-2  d-none d-sm-block" [ngClass]="getClassName()">
         <button (click)="checkRoute()" class="btn blue-default btn-rounded float-end" data-bs-toggle="modal"
             [attr.data-bs-target]="modalType" *ngIf="addButtonDisplay">
             <i style="padding-right:3px;" [ngClass]="getIcons()"></i>
             {{addButtonText}}
         </button>
+
     </div>
-    <div class="d-grid col-lg-2  col-md-4  d-none d-sm-block">
+    <div class="d-grid col-lg-2  col-md-4  d-none d-sm-block" style="width: 11%;">
         <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
             *ngIf="activeRoute === 'text-editor'">
             <i style="padding-right:3px;" class="fa fa-trash" aria-hidden="true"></i>

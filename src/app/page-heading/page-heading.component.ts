@@ -34,7 +34,7 @@ export class HeadingComponent implements OnInit {
 
   getClassName() {
     if (this.activeRoute === 'text-editor') {
-      return 'col-lg-2 offset-lg-4';
+      return 'col-lg-2 offset-lg-4 shiftButton';
     } else {
       return 'col-lg-4 offset-lg-4';
     }

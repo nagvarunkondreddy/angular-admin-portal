@@ -71,3 +71,15 @@ textarea {
   opacity: 1;
   padding: 4px 12px !important;
 }
+
+.imageName {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.image-cancel {
+  position: relative;
+  top: 1.3rem;
+  left: 3.5rem;
+  cursor: pointer;
+}
