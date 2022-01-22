@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  isDataAvailable: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  checkData(data:boolean){
+    console.log(data)
+    // this.isDataAvailable=data;
+    // console.log(this.isDataAvailable)
+
   }
 
 }

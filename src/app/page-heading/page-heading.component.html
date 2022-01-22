@@ -35,11 +35,11 @@
 
 <app-modal *ngIf="heading1 == 'Works-in-Progress'" [modalTitle]="'Add A New Project'" [inputOneLabel]="'Title'"
     [inputTwoLabel]="'Gitlab'" [inputThreeLabel]="'Team'" [inputThreeLabelType]="'text'" [inputFourLabel]="'Images'"
-    [inputFiveLabel]="'Description'"></app-modal>
+    [inputFiveLabel]="'Description'" [inputOnePlaceholder]="'Enter Project Title'" [inputTwoPlaceholder]="'Enter Repo Link ...'"></app-modal>
 
 
 <app-modal *ngIf="heading1 == 'Upcoming'" [modalTitle]="'Add A New Event'" [inputOneLabel]="'Title'"
     [inputTwoLabel]="'Venue'" [inputThreeLabel]="'Date'" [inputThreeLabelType]="'datetime-local'"
-    [inputFourLabel]="'Images'" [inputFiveLabel]="'Description'"></app-modal>
+    [inputFourLabel]="'Images'" [inputFiveLabel]="'Description'" [inputOnePlaceholder]="'Enter Event Title'" [inputTwoPlaceholder]="'Enter Venue'"></app-modal>
 
 <app-team-modal></app-team-modal>

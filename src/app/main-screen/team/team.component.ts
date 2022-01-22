@@ -6,18 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
-  teamTableHeadings = ['', 'Name', 'Role', 'Domain', 'Year', 'Member Since'];
+  teamTableHeadings = ['', 'Name', 'Role', 'Domain', 'Number', 'Member Since'];
   teamTableData = [
-    ['../../../assets/images/face.jpg', 'Dishyanth', 'Team Lead', 'Hardware', 'IV', '2019'], 
-    ['../../../assets/images/face.jpg', 'Basu Roy', 'Tech Lead', 'Web Dev', 'III', '2019'],
-    ['../../../assets/images/face.jpg', 'Pakshal', 'Tech Lead', 'Hardware', 'III', '2019'], 
-    ['../../../assets/images/face.jpg', 'Swaroop', 'Tech Lead', 'App Dev', 'III', '2019'],
-    ['../../../assets/images/face.jpg', 'Nagvarun', 'Tech Lead', 'Web Dev', 'III', '2019'],
-    ['../../../assets/images/face.jpg', 'Nagvarun', 'Tech Lead', 'Web Dev', 'III', '2019'],
-    ['../../../assets/images/face.jpg', 'Nagvarun', 'Tech Lead', 'Web Dev', 'III', '2019'],
-    ['../../../assets/images/face.jpg', 'Nagvarun', 'Tech Lead', 'Web Dev', 'III', '2019'],
-    ['../../../assets/images/face.jpg', 'Nagvarun', 'Tech Lead', 'Web Dev', 'III', '2019'],
-    ['../../../assets/images/face.jpg', 'Nagvarun', 'Tech Lead', 'Web Dev', 'III', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 1', 'Team Lead', 'Hardware', '9098789098', '2019'], 
+    ['../../../assets/images/person-img.jpg', 'Person 2', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 3', 'Tech Lead', 'Hardware', '9098789098', '2019'], 
+    ['../../../assets/images/person-img.jpg', 'Person 4', 'Tech Lead', 'App Dev', '9098789098', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 5', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 6', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 7', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 8', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 9', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
+    ['../../../assets/images/person-img.jpg', 'Person 10', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
   ];
 
   constructor() { }

@@ -2,6 +2,10 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @import "../src/assets/css/defaultStyle.css";
 
+html, body {
+  height: 100%;
+}
+
 .btn-rounded {
   border-radius: 2rem;
 }

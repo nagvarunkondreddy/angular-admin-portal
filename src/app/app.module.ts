@@ -20,6 +20,8 @@ import { TableComponent } from './table/table.component';
 import { ModalComponent } from './modals/modal-1/modal.component';
 import { TeamModalComponent } from './modals/team-modal/team-modal.component';
 import { TextEditorComponent } from './main-screen/articles/text-editor/text-editor.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +39,12 @@ import { TextEditorComponent } from './main-screen/articles/text-editor/text-edi
     ModalComponent,
     TeamModalComponent,
     TextEditorComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],

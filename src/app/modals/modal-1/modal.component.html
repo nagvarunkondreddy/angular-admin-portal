@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form>
+                    <form [formGroup]="Form" (ngSubmit)="onSubmit()" id="detailsForm">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="row mb-3">
@@ -15,7 +15,7 @@
                                         class="col-sm-2 col-form-label blue-default-text asterisk">{{inputOneLabel}}</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="projectTitle"
-                                            placeholder="Enter project title...">
+                                            [placeholder]="inputOnePlaceholder" formControlName="inputOneLabel" >
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -23,7 +23,7 @@
                                         class="col-sm-2 col-form-label blue-default-text asterisk">{{inputTwoLabel}}</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="gitlabLink"
-                                            placeholder="Repo link...">
+                                            [placeholder]="inputTwoPlaceholder" formControlName="inputTwoLabel">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -31,7 +31,7 @@
                                         class="col-sm-2 col-form-label blue-default-text asterisk">{{inputThreeLabel}}</label>
                                     <div class="col-sm-9">
                                         <input type={{inputThreeLabelType}} class="form-control" id="teamNames"
-                                            placeholder="Member names...">
+                                            placeholder="Member names..." formControlName="inputThreeLabel">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -43,7 +43,7 @@
                                                 style="color: #757575; font-size: 40px"></i>
                                         </div>
                                         <input type="file" id="pro-image" name="pro-image" style="display: none;"
-                                            class="form-control" (change)="readImage($event)" multiple>
+                                            class="form-control" (change)="readImage($event)" multiple formControlName="inputFourLabel">
                                     </div>
                                     <div class="container mt-3">
                                         <div class="row">
@@ -62,7 +62,7 @@
                                     <label for="description"
                                         class="col-sm-3 col-form-label blue-default-text asterisk">{{inputFiveLabel}}</label>
                                     <div class="col-sm-9">
-                                        <textarea id="description" cols="40" rows="11"></textarea>
+                                        <textarea id="description" cols="40" rows="11" formControlName="inputFiveLabel"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </span>
                     Discard</button>
-                <button type="button" class="btn  discard-button-1" data-bs-dismiss="modal">
+                <button form="detailsForm" type="submit" [disabled]="!Form.valid" class="btn  discard-button-1" data-bs-dismiss="modal">
                     <span class="btn-label-1">
                         <i class="fa fa-floppy-o" aria-hidden="true"></i>
                     </span>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modal',
@@ -6,9 +7,20 @@ import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
-  @Input() modalTitle: any;
+  @Input() modalTitle: any ;
+  Form = new FormGroup({
+    inputOneLabel: new FormControl('',Validators.required),
+    inputTwoLabel: new FormControl('',Validators.required),
+    inputThreeLabel:new FormControl('',Validators.required),
+ inputFourLabel: new FormControl('',Validators.required),
+ inputFiveLabel: new FormControl('',Validators.required)
+
+
+  });
   @Input() inputOneLabel: any;
+  @Input() inputOnePlaceholder: any;
   @Input() inputTwoLabel: any;
+  @Input() inputTwoPlaceholder: any;
   @Input() inputThreeLabel: any;
   @Input() inputThreeLabelType: any;
   @Input() inputFourLabel: any;
@@ -44,4 +56,8 @@ export class ModalComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onSubmit(){
+    console.log(this.Form.value)
+  }
 }

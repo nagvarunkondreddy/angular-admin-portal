@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RecruitmentComponent implements OnInit {
   recruitmentTableHeadings = [
     'Name',
-    'Year',
+    'Date',
     'Applied Domains',
     'Contact Number',
     'Email ID',
@@ -17,7 +17,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -25,7 +25,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -33,7 +33,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -41,7 +41,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -49,7 +49,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -57,7 +57,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -65,7 +65,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -73,7 +73,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -81,7 +81,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -90,7 +90,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -98,7 +98,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -106,7 +106,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -114,7 +114,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -122,7 +122,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -130,7 +130,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
@@ -138,7 +138,7 @@ export class RecruitmentComponent implements OnInit {
     [
       '',
       'Applicant Name',
-      'II',
+      '01/10/2021',
       'App Dev, Web Dev',
       '9583739283',
       'applicant@email.com',
