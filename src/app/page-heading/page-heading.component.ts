@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { State } from '../shared/reducers/current-router.reducer';
-import * as currentRouteSelector from '../shared/selector/current-router.selectors';
+import { State } from '../shared/store/reducers/current-router.reducer';
+import * as currentRouteSelector from '../shared/store/selector/current-router.selectors';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,13 +27,14 @@ export class HeadingComponent implements OnInit {
   ngOnInit(): void {}
 
   checkRoute() {
-    if (this.activeRoute === 'articles') {
-      this.router.navigateByUrl('/text-editor');
+    console.log(this.activeRoute)
+    if (this.activeRoute === 'article') {
+      this.router.navigateByUrl('/texteditor');
     }
   }
 
   getClassName() {
-    if (this.activeRoute === 'text-editor') {
+    if (this.activeRoute === 'texteditor') {
       return 'col-lg-2 offset-lg-4 shiftButton';
     } else {
       return 'col-lg-4 offset-lg-4';
@@ -41,14 +42,14 @@ export class HeadingComponent implements OnInit {
   }
 
   getIcons() {
-    if (this.activeRoute === 'text-editor') {
+    if (this.activeRoute === 'texteditor') {
       return 'bi bi-cloud-upload-fill';
     } else {
       return 'bi bi-plus';
     }
   }
   getClassName1() {
-    if (this.activeRoute === 'text-editor') {
+    if (this.activeRoute === 'texteditor') {
       return 'col-6';
     } else {
       return 'col-8';
@@ -56,7 +57,7 @@ export class HeadingComponent implements OnInit {
   }
 
   getClassName2() {
-    if (this.activeRoute === 'text-editor') {
+    if (this.activeRoute === 'texteditor') {
       return 'col-3';
     } else {
       return 'col-4';

@@ -12,7 +12,7 @@
     </div>
     <div class="d-grid col-lg-2  col-md-4  d-none d-sm-block" style="width: 11%;">
         <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
-            *ngIf="activeRoute === 'text-editor'">
+            *ngIf="activeRoute === 'texteditor'">
             <i style="padding-right:3px;" class="fa fa-trash" aria-hidden="true"></i>
             Discard
         </button>
@@ -26,14 +26,14 @@
     </div>
     <div class="d-grid col-3 d-block d-sm-none">
         <button class="btn blue-default btn-rounded float-end" data-bs-toggle="modal" [attr.data-bs-target]="modalType"
-            *ngIf="activeRoute === 'text-editor'">
+            *ngIf="activeRoute === 'texteditor'">
             <i class="fa fa-trash" aria-hidden="true"></i>
 
         </button>
     </div>
 </div>
 
-<app-modal *ngIf="heading1 == 'Works-in-Progress'" [modalTitle]="'Add A New Project'" [inputOneLabel]="'Title'"
+<app-modal *ngIf="heading1 == 'Work-in-Progress'" [modalTitle]="'Add A New Project'" [inputOneLabel]="'Title'"
     [inputTwoLabel]="'Gitlab'" [inputThreeLabel]="'Team'" [inputThreeLabelType]="'text'" [inputFourLabel]="'Images'"
     [inputFiveLabel]="'Description'" [inputOnePlaceholder]="'Enter Project Title'" [inputTwoPlaceholder]="'Enter Repo Link ...'"></app-modal>
 

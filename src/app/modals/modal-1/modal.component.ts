@@ -7,7 +7,7 @@ import { FormGroup,FormControl, Validators } from '@angular/forms';
   styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
-  @Input() modalTitle: any ;
+  @Input() modalTitle: any ; 
   Form = new FormGroup({
     inputOneLabel: new FormControl('',Validators.required),
     inputTwoLabel: new FormControl('',Validators.required),

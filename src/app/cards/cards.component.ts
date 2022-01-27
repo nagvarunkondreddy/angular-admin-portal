@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SpinnerService } from '../shared/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-cards',
@@ -9,9 +10,7 @@ export class CardsComponent implements OnInit {
   cardContent: any;
   @Input() cardImageLocation: any;
   @Input() cardTitle: any;
-  @Output() dataCheckEvent = new EventEmitter<boolean>();
-
-  constructor() {
+  constructor(private spinnerService: SpinnerService) {
 
 
   }
@@ -26,7 +25,7 @@ export class CardsComponent implements OnInit {
       { "name": `${this.cardTitle} 6`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." },
       { "name": `${this.cardTitle} 7`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." }
     ]
-    this.dataCheckEvent.emit(true);
+
   }
 
 }

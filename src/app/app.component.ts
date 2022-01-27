@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { State } from './shared/reducers/current-router.reducer';
+import { State } from './shared/store/reducers/current-router.reducer';
 import { filter } from 'rxjs/operators';
-import * as  CurrentRouterActions from './shared/actions/current-router.actions';
+import * as  CurrentRouterActions from './shared/store/actions/current-router.actions';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +20,9 @@ export class AppComponent {
         .subscribe((event: any) => {
           this.active = event.url;     
           this.active = this.active.substring(1); //to remove slash
+          console.log(this.active)
                     if(!this.active){
-            this.active = "projects";
+            this.active = "project";
           }
           this.store.dispatch(new CurrentRouterActions.SaveCurrentRoutes({name: this.active, route: event.url}));
 

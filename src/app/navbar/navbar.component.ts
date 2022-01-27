@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { State } from '../shared/reducers/current-router.reducer';
-import * as currentRouteSelector from '../shared/selector/current-router.selectors';
+import { AuthService } from '../shared/services/auth/auth.service';
+import { State } from '../shared/store/reducers/current-router.reducer';
+import * as currentRouteSelector from '../shared/store/selector/current-router.selectors';
 
 @Component({
   selector: 'app-navbar',
@@ -12,34 +13,57 @@ import * as currentRouteSelector from '../shared/selector/current-router.selecto
 export class NavbarComponent implements OnInit {
   routeDetails: any;
   activeElement: any;
-  constructor(private router: Router, private store: Store<State>) {
-    this.store
-      .pipe(select(currentRouteSelector.getCurrentRoute))
-      .subscribe((element) => {
-        this.removeActiveRouter();
-        if (element.name === 'text-editor') {
-          this.activeElement = document.getElementById('articles');
-        } else {
-          this.activeElement = document.getElementById(element.name);
-        }
+  userRole: any;
+  constructor(private router: Router, private store: Store<State>, private auth : AuthService) {
 
-        if (this.activeElement != null) {
-          this.activeElement.style.color = 'rgba(255,255,255)';
-          this.activeElement.style.fontWeight = '600';
-        }
-      });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.assignUserRole();
+    
+
+  }
+
+  ngAfterViewInit(){
+    this.addColorToActiveElement();
+  }
+addColorToActiveElement(){
+  this.store
+  .pipe(select(currentRouteSelector.getCurrentRoute))
+  .subscribe((element) => {
+    this.removeActiveRouter();
+    if (element.name === 'texteditor') {
+      this.activeElement = document.getElementById('article');
+    } else {
+      console.log(element.name)
+      this.activeElement = document.getElementById(element.name);
+    }
+
+    if (this.activeElement != null) {
+      this.activeElement.style.color = 'rgba(255,255,255)';
+      this.activeElement.style.fontWeight = '600';
+    }
+  });
+
+}
 
   removeActiveRouter(): void {
-    var tabs = ['projects', 'events', 'articles', 'team', 'recruitment'];
+    var tabs = ['project', 'event', 'article', 'team', 'recruitments'];
     for (var i = 0; i < tabs.length; i++) {
       var element = document.getElementById(tabs[i]);
       if (element) {
-        element.style.color = 'rgba(255,255,255,.55)';
-        element.style.fontWeight = '0';
+        element.style.color = 'rgba(255,255,255,.75)';
+        element.style.fontWeight = 'unset';
       }
     }
+  }
+
+  assignUserRole(){
+    this.userRole=this.auth.getUserRole();
+  }
+
+  signout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
   }
 }

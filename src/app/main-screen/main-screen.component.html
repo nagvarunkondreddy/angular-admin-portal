@@ -1,2 +1,4 @@
 <app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<app-loading *ngIf="showLoading"></app-loading>
+<router-outlet *ngIf="!showLoading"></router-outlet>
+

@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form>
+                    <form [formGroup] = "memberForm" (ngSubmit)="memberDetails()">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="row mb-3">
@@ -15,7 +15,7 @@
                                         class="col-sm-2 col-form-label blue-default-text asterisk">Name</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="memberName"
-                                            placeholder="Enter name...">
+                                            placeholder="Enter name..." formControlName="name">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -23,21 +23,21 @@
                                         class="col-sm-2 col-form-label blue-default-text asterisk">Domain</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="domain"
-                                            placeholder="Enter domain...">
+                                            placeholder="Enter domain..." formControlName="domain">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="role"
                                         class="col-sm-2 col-form-label blue-default-text asterisk">Role</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="role" placeholder="Enter role">
+                                        <input type="text" class="form-control" id="role" placeholder="Enter role" formControlName="role">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="year"
-                                        class="col-sm-2 col-form-label blue-default-text asterisk">Year</label>
+                                    <label for="number"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">Number</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="year" placeholder="enter year">
+                                        <input type="text" class="form-control" id="number" placeholder="enter mobile number" formControlName="number">
                                     </div>
 
                                 </div>
@@ -46,7 +46,7 @@
                                         class="col-sm-2 col-form-label blue-default-text asterisk">Joined</label>
                                     <div class="col-sm-9">
                                         <input type="date" class="form-control" id="joined"
-                                            placeholder="Enter joining date">
+                                            placeholder="Enter joining date" formControlName="joined">
                                     </div>
 
                                 </div>
@@ -54,7 +54,7 @@
                                     <label for="profile"
                                         class="col-sm-2 col-form-label blue-default-text asterisk">profile</label>
                                     <div class="col-sm-9">
-                                        <input type="file" class="form-control" id="profile">
+                                        <input type="file" class="form-control" id="profile" formControlName="profile">
                                     </div>
 
                                 </div>
@@ -64,7 +64,7 @@
                                     <label for="description"
                                         class="col-sm-2 col-form-label blue-default-text asterisk">About</label>
                                     <div class="col-sm-9">
-                                        <textarea id="description" cols="40" rows="11"></textarea>
+                                        <textarea id="description" cols="40" rows="11" formControlName="description"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </span>
                     Discard</button>
-                <button type="button" class="btn  discard-button-1" data-bs-dismiss="modal">
+                <button type="button" class="btn  discard-button-1" data-bs-dismiss="modal" [disabled]="memberForm.invalid">
                     <span class="btn-label-1">
                         <i class="fa fa-floppy-o" aria-hidden="true"></i>
                     </span>

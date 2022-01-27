@@ -4,6 +4,7 @@
 
 html, body {
   height: 100%;
+ 
 }
 
 .btn-rounded {
@@ -115,4 +116,8 @@ textarea {
 
 .btn {
   padding: 0.275rem 0.75rem !important;
+}
+
+.form-error{
+  color:red;
 }
