@@ -28,7 +28,7 @@ export class HeadingComponent implements OnInit {
 
   checkRoute() {
     console.log(this.activeRoute)
-    if (this.activeRoute === 'article') {
+    if (this.activeRoute === 'article/stats') {
       this.router.navigateByUrl('/texteditor');
     }
   }

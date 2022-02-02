@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form [formGroup] = "memberForm" (ngSubmit)="memberDetails()">
+                    <form [formGroup] = "memberForm" (ngSubmit)="addMemberDetails()" id="teamMemberDetailsForm">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="row mb-3">
@@ -80,7 +80,7 @@
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </span>
                     Discard</button>
-                <button type="button" class="btn  discard-button-1" data-bs-dismiss="modal" [disabled]="memberForm.invalid">
+                <button type="submit" form="teamMemberDetailsForm" class="btn  discard-button-1" data-bs-dismiss="modal" [disabled]="memberForm.invalid">
                     <span class="btn-label-1">
                         <i class="fa fa-floppy-o" aria-hidden="true"></i>
                     </span>

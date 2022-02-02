@@ -16,10 +16,19 @@
                 <li class="nav-item" *ngIf="userRole === 'hr'">
                     <a class="nav-link " routerLink="/event" id="event">Events</a>
                 </li>
-                <li class="nav-item" *ngIf="userRole === 'hr'">
+                <li class="nav-item dropdown" *ngIf="userRole === 'hr'">
+                    <a class="nav-link dropdown-toggle"  id="article" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Articles
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/article/all-articles">All Articles</a></li>
+                      <li><a class="dropdown-item" routerLink="/article/stats">Articles Stats</a></li>
+                    </ul>
+                  </li>
+                <!-- <li class="nav-item" *ngIf="userRole === 'hr'">
                     <a class="nav-link " routerLink="/article" id="article">Articles</a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <li class="nav-item" *ngIf="userRole === 'hr'">
                     <a class="nav-link " routerLink="/team" id="team">Team</a>
                 </li>
                 <li class="nav-item" *ngIf="userRole === 'technicalLead'">

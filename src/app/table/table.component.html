@@ -7,10 +7,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tableData of tableData let i = index">
-        <td *ngIf="imageTable"><img src="{{tableData[0]}}" height="70" class="round"></td>
+      <tr *ngFor="let tableData of tableData">
+        <ng-container *ngIf="imageTable">
+        <td ><img src="{{tableData[0]}}" height="70" class="round"></td>
         <td *ngFor="let data of tableData | slice: 1;let i = index" [class.name]="i == 0">{{data}}</td>
+      </ng-container>
+      <ng-container *ngIf="!imageTable" >
+      <td *ngFor="let data of tableData">{{data}}</td>
+    </ng-container>
       </tr>
     </tbody>
-  </table>
+  </table> 
 </div> 

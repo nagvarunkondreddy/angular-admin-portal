@@ -5,7 +5,7 @@ import { ModalComponent } from 'src/app/modals/modal-1/modal.component';
 import { TeamModalComponent } from 'src/app/modals/team-modal/team-modal.component';
 import { HeadingComponent } from 'src/app/page-heading/page-heading.component';
 import { LoadingComponent } from 'src/app/loading/loading.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from 'src/app/table/table.component';
 
 
@@ -20,7 +20,8 @@ import { TableComponent } from 'src/app/table/table.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [     CardsComponent,
     HeadingComponent,
@@ -28,6 +29,7 @@ import { TableComponent } from 'src/app/table/table.component';
     ModalComponent,
     TableComponent,
     CommonModule,
-    ReactiveFormsModule ],
+    ReactiveFormsModule,
+  FormsModule ],
 })
 export class SharedModule { }

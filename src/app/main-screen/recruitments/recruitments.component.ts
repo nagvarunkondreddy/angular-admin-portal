@@ -15,7 +15,6 @@ export class RecruitmentsComponent implements OnInit {
   ];
   recruitmentTableData = [
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -23,7 +22,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -31,7 +29,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -39,7 +36,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -47,7 +43,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -55,7 +50,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -63,7 +57,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -71,7 +64,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -79,7 +71,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -88,7 +79,6 @@ export class RecruitmentsComponent implements OnInit {
     ],
 
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -96,7 +86,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -104,7 +93,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -112,7 +100,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',
@@ -120,23 +107,6 @@ export class RecruitmentsComponent implements OnInit {
       'applicant@email.com',
     ],
     [
-      '',
-      'Applicant Name',
-      '01/10/2021',
-      'App Dev, Web Dev',
-      '9583739283',
-      'applicant@email.com',
-    ],
-    [
-      '',
-      'Applicant Name',
-      '01/10/2021',
-      'App Dev, Web Dev',
-      '9583739283',
-      'applicant@email.com',
-    ],
-    [
-      '',
       'Applicant Name',
       '01/10/2021',
       'App Dev, Web Dev',

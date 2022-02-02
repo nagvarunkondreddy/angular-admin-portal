@@ -18,12 +18,16 @@ const routes: Routes = [
       { path: '', loadChildren: () => import('./main-screen/project/project.module').then(m => m.ProjectModule),canActivate:[RoleGuard] },
       { path: 'project', loadChildren: () => import('./main-screen/project/project.module').then(m => m.ProjectModule) },
       { path: 'event', loadChildren: () => import('./main-screen/event/event.module').then(m => m.EventModule) },
-      { path: 'article', loadChildren: () => import('./main-screen/article/article.module').then(m => m.ArticleModule) },
+      { path: 'article', children:[
+        {path:'all-articles', loadChildren: () => import('./main-screen/article/article.module').then(m => m.ArticleModule) },
+        {path:'stats', loadChildren:()=> import('./main-screen/article-stats/article-stats.module').then(m=>m.ArticleStatsModule)}
+      ] },
       { path: 'team', loadChildren: () => import('./main-screen/teams/teams.module').then(m => m.TeamsModule) },
       { path: 'recruitments', loadChildren: () => import('./main-screen/recruitments/recruitments.module').then(m => m.RecruitmentsModule) },
       { path: 'texteditor', loadChildren: () => import('./texteditor/texteditor.module').then(m => m.TexteditorModule) },
     ],
   },
+  { path: 'article-stats', loadChildren: () => import('./main-screen/article-stats/article-stats.module').then(m => m.ArticleStatsModule) },
 
 
 

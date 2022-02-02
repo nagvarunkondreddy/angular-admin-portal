@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TeamService } from 'src/app/shared/services/team/team.service';
 
 @Component({
   selector: 'app-team-modal',
@@ -18,11 +19,19 @@ export class TeamModalComponent implements OnInit {
 
 
   })
-  constructor() {}
+  constructor(private teamService : TeamService) {}
 
   ngOnInit(): void {}
 
-  memberDetails(){
-    console.log(this.memberForm.value);
+  addMemberDetails(){
+  const  dateParts  = this.memberForm.value.joined.split("-");
+    const year = dateParts[0];
+    const data=['../../../assets/images/person-img.jpg'];
+    data.push(this.memberForm.value.name);
+    data.push(this.memberForm.value.role);
+    data.push(this.memberForm.value.domain);
+    data.push(this.memberForm.value.number);
+    data.push(year);
+    this.teamService.addTeamMember(data);
   }
 }

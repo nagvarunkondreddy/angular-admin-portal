@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
+import { EventService } from 'src/app/shared/services/event/event.service';
+import { ProjectService } from 'src/app/shared/services/project/project.service';
 
 @Component({
   selector: 'app-modal',
@@ -25,7 +27,7 @@ export class ModalComponent implements OnInit {
   @Input() inputThreeLabelType: any;
   @Input() inputFourLabel: any;
   @Input() inputFiveLabel: any;
-  constructor(private ref: ChangeDetectorRef) {}
+  constructor(private ref: ChangeDetectorRef, private projectService : ProjectService, private eventService : EventService) {}
   images: any = [];
 
   readImage(e: any) {
@@ -58,6 +60,10 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(){
-    console.log(this.Form.value)
+    if(this.modalTitle === 'Add A New Project')
+    this.projectService.addNewProjectContent(this.Form.value);
+    else
+    this.eventService.addNewEventContent(this.Form.value);
+    
   }
 }

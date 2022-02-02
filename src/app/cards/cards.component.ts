@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EventService } from '../shared/services/event/event.service';
+import { ProjectService } from '../shared/services/project/project.service';
 import { SpinnerService } from '../shared/services/spinner/spinner.service';
 
 @Component({
@@ -10,22 +12,25 @@ export class CardsComponent implements OnInit {
   cardContent: any;
   @Input() cardImageLocation: any;
   @Input() cardTitle: any;
-  constructor(private spinnerService: SpinnerService) {
+  constructor(private spinnerService: SpinnerService, private projectService: ProjectService, private eventService : EventService) {
 
 
   }
 
-  ngOnInit(): void {
-    this.cardContent = [
-      { "name": `${this.cardTitle} 1`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." },
-      { "name": `${this.cardTitle} 2`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." },
-      { "name": `${this.cardTitle} 3`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." },
-      { "name": `${this.cardTitle} 4`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." },
-      { "name": `${this.cardTitle} 5`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." },
-      { "name": `${this.cardTitle} 6`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." },
-      { "name": `${this.cardTitle} 7`, "description": "Some quick example text to build on the card title and make up the bulkof the card's content." }
-    ]
+  ngOnInit(): void { 
+    if(this.cardTitle === 'Project')
+    this.cardContent = this.projectService.getProjectCardContent();
 
+    else
+    this.cardContent = this.eventService.getEventCardContent();
+
+  }
+
+  deleteCard(i:any){
+    if(this.cardTitle === 'Project')
+    this.projectService.deleteProject(i);
+    else
+    this.eventService.deleteEvent(i);
   }
 
 }
