@@ -48,5 +48,9 @@ export class TexteditorComponent implements OnInit {
     
   }
 
+  postArticle(){
+    console.log('article posted');
+  }
+
 
 }

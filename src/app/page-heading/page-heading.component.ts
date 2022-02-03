@@ -3,6 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { State } from '../shared/store/reducers/current-router.reducer';
 import * as currentRouteSelector from '../shared/store/selector/current-router.selectors';
 import { Router } from '@angular/router';
+import { ArticleService } from '../shared/services/article/article.service';
 
 @Component({
   selector: 'app-heading',
@@ -16,7 +17,7 @@ export class HeadingComponent implements OnInit {
   @Input() modalType: any;
   @Input() mobileViewButtonText: any;
   activeRoute: any;
-  constructor(private store: Store<State>, private router: Router) {
+  constructor(private store: Store<State>, private router: Router, private articleService : ArticleService) {
     this.store
       .pipe(select(currentRouteSelector.getCurrentRoute))
       .subscribe((element) => {
@@ -26,10 +27,17 @@ export class HeadingComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  checkRoute() {
-    console.log(this.activeRoute)
+  buttonClick() {
     if (this.activeRoute === 'article/stats') {
       this.router.navigateByUrl('/texteditor');
+    }
+    if(this.activeRoute === 'texteditor')
+    {
+     const editor = document.getElementById('editor');
+     const editorValue = (<HTMLIFrameElement>editor).contentWindow?.document.body.innerText;
+     this.articleService.addArticle(editorValue);
+     this.router.navigateByUrl('/article/all-articles');
+     
     }
   }
 

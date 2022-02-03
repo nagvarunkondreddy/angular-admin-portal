@@ -22,6 +22,7 @@ import { Chart,
   Legend,
   Title,
   Tooltip } from 'node_modules/chart.js';
+import { ArticleService } from 'src/app/shared/services/article/article.service';
 
 @Component({
   selector: 'app-article',
@@ -29,21 +30,19 @@ import { Chart,
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-  articleData:any =[
-    {"title":"Article 01", "content" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."},
-    {"title":"Article 02", "content" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."},
-    {"title":"Article 03", "content" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."},
-    {"title":"Article 04", "content" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."},
+  articleData:any;
 
-  ]
-
-  constructor() {    
+  constructor(private articleService : ArticleService) {    
 
   }
 
   ngOnInit(): void {
-  
-  
+    this.articleData=this.articleService.getArticles();
+  }
+
+  deleteArticle(index:any){
+    this.articleService.deleteArticle(index);
+
   }
 
 }

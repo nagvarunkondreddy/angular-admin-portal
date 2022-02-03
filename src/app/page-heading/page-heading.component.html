@@ -2,8 +2,8 @@
     <div class="col col-lg-4 col-md-4" [ngClass]="getClassName1()">
         <h3 class="blue-default-text">{{heading1}}</h3>
     </div>
-    <div class="d-grid   offset-md-4 col-md-2  d-none d-sm-block" [ngClass]="getClassName()">
-        <button (click)="checkRoute()" class="btn blue-default btn-rounded float-end" data-bs-toggle="modal"
+    <div class="d-grid   offset-md-4 col-md-2  d-none d-sm-block" [ngClass]="getClassName()"> 
+        <button (click)="buttonClick()" class="btn blue-default btn-rounded float-end" data-bs-toggle="modal"
             [attr.data-bs-target]="modalType" *ngIf="addButtonDisplay">
             <i style="padding-right:3px;" [ngClass]="getIcons()"></i>
             {{addButtonText}}
@@ -18,7 +18,7 @@
         </button>
     </div>
     <div class="d-grid d-block d-sm-none" [ngClass]="getClassName2()">
-        <button (click)="checkRoute()" class="btn blue-default btn-rounded float-end" data-bs-toggle="modal"
+        <button (click)="buttonClick()" class="btn blue-default btn-rounded float-end" data-bs-toggle="modal"
             [attr.data-bs-target]="modalType" *ngIf="addButtonDisplay">
             <i [ngClass]="getIcons()"></i>
             {{mobileViewButtonText}}

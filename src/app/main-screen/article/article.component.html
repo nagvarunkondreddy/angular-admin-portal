@@ -1,9 +1,9 @@
-<div id="cards_landscape_wrap-2">
+<div id="cards_landscape_wrap-2" >
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let data of articleData">
-                <a href="">
-                    <div class="card-flyer">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pb-3" *ngFor="let data of articleData; let i = index">
+                
+                    <!-- <div class="card-flyer" style="height: 89%;">
                         <div class="text-box">
                             <div class="image-box">
                                 <img src="../../../assets/images/article-image.png" alt="" />
@@ -18,8 +18,20 @@
                             </div>
 
                         </div>
+                    </div> -->
+                    <div class="card h-100 text-center">
+                        <div class="image-box">
+                        <img src="../../../assets/images/article-image.png" class="card-img-top" alt="...">
                     </div>
-                </a>
+                        <div class="card-body">
+                          <h5 class="card-title">{{data.title}}</h5>
+                          <p class="card-text">{{data.content}}</p>
+                        
+                        </div>
+                        <div class="card-footer ">
+                            <a (click)="deleteArticle(i)" class="btn button-css float-start">Delete</a>
+                          </div>
+                      </div>
             </div>
         </div>
     </div>
