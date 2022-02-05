@@ -19,10 +19,14 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void { 
     if(this.cardTitle === 'Project')
-    this.cardContent = this.projectService.getProjectCardContent();
+     this.projectService.getProjectCardContent().subscribe((data)=>{
+       this.cardContent=data;
+     });
 
     else
-    this.cardContent = this.eventService.getEventCardContent();
+     this.eventService.getEventCardContent().subscribe((data)=>{
+      this.cardContent=data;
+    });;
 
   }
 

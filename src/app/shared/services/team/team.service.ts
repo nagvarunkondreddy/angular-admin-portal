@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Team } from '../../models/team.model';
+import { AppConfig } from '../config/app.config';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +21,10 @@ export class TeamService {
     ['../../../assets/images/person-img.jpg', 'Person 10', 'Tech Lead', 'Web Dev', '9098789098', '2019'],
   ]
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getTeamDetails(){
-    return this.teamMemberData;
+  getTeamDetails(): Observable<Team[]>{
+    return this.http.get<Team[]>(`${AppConfig.TEAM_URL}`);
   }
 
   addTeamMember(data:any){

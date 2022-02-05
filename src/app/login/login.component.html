@@ -38,13 +38,14 @@
                     <div *ngIf="f.password.errors?.required" class="form-error">password is required</div>
                     <div *ngIf="f.password.errors?.minlength" class="form-error">Minimum 5 characters is required</div>
                 </div>
-                <div class="form-error" *ngIf="(!f.email.errors) && (!f.password.errors)">
+                <div class="form-error" *ngIf="((f.email.valid) && (f.password.valid))">
                     {{formErrorMsg}}
                 </div>
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" [disabled]="!loginForm.valid">
+                    <button *ngIf="!showLoading" class="login100-form-btn" [disabled]="!loginForm.valid">
                         Login
                     </button>
+                    <app-loading *ngIf="showLoading"></app-loading>
                 </div>
             </form>
         </div>

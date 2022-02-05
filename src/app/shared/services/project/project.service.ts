@@ -1,4 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Project } from '../../models/project.model';
+import { Team } from '../../models/team.model';
+import { AppConfig } from '../config/app.config';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +18,11 @@ export class ProjectService {
     { "inputOneLabel": "project 6", "inputFiveLabel": "Some quick example text to build on the card title and make up the bulkof the card's content." },
   ]
 
-  constructor() {
+  constructor(private http:HttpClient) {
    }
 
-   getProjectCardContent(){
-     return this.projectCardContent;
+   getProjectCardContent():Observable<Project[]>{
+     return this.http.get<Project[]>(`${AppConfig.PROJECT_URL}`);
    }
 
    addNewProjectContent(data:any){

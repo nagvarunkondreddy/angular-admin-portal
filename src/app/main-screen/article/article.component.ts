@@ -37,7 +37,9 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articleData=this.articleService.getArticles();
+    this.articleService.getArticles().subscribe(data =>{
+      this.articleData=data;
+    });
   }
 
   deleteArticle(index:any){

@@ -9,8 +9,8 @@
     <tbody>
       <tr *ngFor="let tableData of tableData">
         <ng-container *ngIf="imageTable">
-        <td ><img src="{{tableData[0]}}" height="70" class="round"></td>
-        <td *ngFor="let data of tableData | slice: 1;let i = index" [class.name]="i == 0">{{data}}</td>
+        <td ><img src="{{tableData.image}}" height="70" class="round"></td>
+        <td *ngFor="let col of tableIndex;let i = index" [class.name]="i == 0">{{tableData[col]}}</td>
       </ng-container>
       <ng-container *ngIf="!imageTable" >
       <td *ngFor="let data of tableData">{{data}}</td>

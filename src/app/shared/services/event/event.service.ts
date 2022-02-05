@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Events } from '../../models/events.model';
+import { AppConfig } from '../config/app.config';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +18,10 @@ export class EventService {
     { "inputOneLabel": "event 6", "inputFiveLabel": "Some quick example text to build on the card title and make up the bulkof the card's content." },
   ]
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getEventCardContent(){
-    return this.eventCardContent;
+  getEventCardContent():Observable<Events[]>{
+    return this.http.get<Events[]>(`${AppConfig.EVENT_URL}`);
   }
 
   addNewEventContent(data:any){

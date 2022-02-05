@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Article } from '../../models/article.model';
+import { AppConfig } from '../config/app.config';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +17,10 @@ export class ArticleService {
  
   ]
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getArticles(){
-    return this.articleContent;
+  getArticles(): Observable<Article[]>{
+    return this.http.get<Article[]>(`${AppConfig.ARTICLE_URL}`);
   }
   addArticle(data:any){
     const obj = {"title":"Article 05", "content":data};

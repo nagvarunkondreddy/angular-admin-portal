@@ -8,6 +8,7 @@ import { TeamService } from 'src/app/shared/services/team/team.service';
 })
 export class TeamsComponent implements OnInit {
   teamTableHeadings = ['', 'Name', 'Role', 'Domain', 'Number', 'Member Since'];
+  teamTableIndex = ['name','designation','domain','phone','year'];
   teamTableData : any;
 
   constructor(private teamService: TeamService) { }
@@ -17,7 +18,9 @@ export class TeamsComponent implements OnInit {
   }
 
   getTeamData(){
-this.teamTableData = this.teamService.getTeamDetails();
+this.teamService.getTeamDetails().subscribe(data=>{
+  this.teamTableData=data;
+});
   }
 
 }
